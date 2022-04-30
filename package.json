@@ -12,9 +12,7 @@
   "dependencies": {
     "next": "12.1.5",
     "react": "18.0.0",
-    "react-dom": "18.0.0",
-    "sass": "^1.50.1",
-    "sass-loader": "^12.6.0"
+    "react-dom": "18.0.0"
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.37.2",
@@ -26,7 +24,9 @@
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-jest": "^26.1.5",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-webpack-plugin": "^3.1.1",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.6.2",

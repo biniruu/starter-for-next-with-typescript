@@ -6,7 +6,7 @@ module.exports = {
     'eslint-config-prettier',
     'plugin:import/recommended',
     'plugin:jest/recommended',
-    'plugin:jsx-a11y/recommended',
+    'plugin:jsx-a11y/recommended', // 웹 접근성 관련 jsx 규칙
     'plugin:prettier/recommended',
     'plugin:react/jsx-runtime', // If you are using the new JSX transform from React 17, you should enable this
     'plugin:react/recommended',
@@ -18,11 +18,11 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 'latest',
-    project: 'tsconfig.json',
-    sourceType: 'module',
+    project: 'tsconfig.json', // parser: @typescript-eslint/parsergst를 활성화 하기 위해 꼭 필요
+    sourceType: 'module', // 모듈 시스템 사용 시 필요
   },
   plugins: ['import', 'jest', 'jsx-a11y', 'prettier', 'react', 'react-hooks', '@typescript-eslint'],
-  root: true,
+  root: true, // 해당 설정 파일이 root 임을 명시하는 옵션. true라면 상위 설정 파일 찾기를 여기서 멈춘다.
   rules: {
     '@typescript-eslint/no-explicit-any': ['warn', { ignoreRestArgs: true }],
     '@typescript-eslint/no-unused-vars': ['warn'],
@@ -77,7 +77,7 @@ module.exports = {
     'prefer-const': 'error',
     'prefer-rest-params': 'error',
     'prettier/prettier': [
-      'error',
+      'warn',
       {
         endOfLine: 'auto',
       },
@@ -103,12 +103,12 @@ module.exports = {
     'react/static-property-placement': ['error', 'static public field'], // defaultProps를 클래스 내부에 정의하도록 허용
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'space-before-function-paren': 'off',
+    'space-before-function-paren': 'off', // allow debugger during development
   },
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx'], // react 사용 시 활성화 필요. jsx를 import할 때 import/no-unresolved 에러가 발생하지 않도록 함
       },
     },
     react: {
