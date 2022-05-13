@@ -19,13 +19,14 @@ module.exports = {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 'latest',
     project: 'tsconfig.json', // parser: @typescript-eslint/parsergst를 활성화 하기 위해 꼭 필요
+    requireConfigFile: false, // "no babel config file detected for ..." 에러 해결을 위해 필요
     sourceType: 'module', // 모듈 시스템 사용 시 필요
   },
   plugins: ['import', 'jest', 'jsx-a11y', 'prettier', 'react', 'react-hooks', '@typescript-eslint'],
   root: true, // 해당 설정 파일이 root 임을 명시하는 옵션. true라면 상위 설정 파일 찾기를 여기서 멈춘다.
   rules: {
     '@typescript-eslint/no-explicit-any': ['warn', { ignoreRestArgs: true }],
-    '@typescript-eslint/no-unused-vars': ['warn'],
+    '@typescript-eslint/no-unused-vars': 'error', // typescript는 트랜스파일 시 사용하지 않는 변수가 있으면 error를 발생시키기 때문에 warn으로 지정해봐야 의미 없다.
     '@typescript-eslint/no-var-requires': 'error',
     'array-bracket-spacing': ['warn', 'never'],
     camelcase: ['error', { properties: 'never' }],
@@ -92,12 +93,14 @@ module.exports = {
     'react/jsx-no-bind': [
       'error',
       {
+        allowArrowFunctions: true,
         allowFunctions: true,
       },
     ], // 함수를 props로 넘길 수 있도록 허용
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react/no-direct-mutation-state': 'warn', // state 직접 수정 금지
+    'react/no-unescaped-entities': 'warn', // jsx 안에서 escape 되지 않은 entity 코드를 사용했을 때 경고 발생
     'react/no-unused-state': 'warn', // 사용되지 않는 state
     'react/self-closing-comp': ['warn', { component: true, html: false }],
     'react/static-property-placement': ['error', 'static public field'], // defaultProps를 클래스 내부에 정의하도록 허용

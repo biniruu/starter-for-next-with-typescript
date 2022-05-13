@@ -1,10 +1,10 @@
-# Next.js with TypeScript boilerplate
+# Next.js with TypeScript Starter
 
 ```
 이곳은 공사 중 🚨
 ```
 
-넥스트 + 타입스크립트 프로젝트를 바로 시작할 수 있는 보일러플레이트예요.  
+넥스트 + 타입스크립트 프로젝트를 시작할 때 필요한 스타터예요.  
 create next app으로 next.js 설치 후 next 프로젝트에 필요한 기본적인 패키지를 추가했어요.
 
 개인 프로젝트용으로 만들었기 때문에 각 설정 파일은 개인 취향에 맞췄어요.  
@@ -42,11 +42,11 @@ $ yarn add -D eslint-plugin-jest ts-jest
 
 ## Stylelint
 
-$ yarn add -D stylelint stylelint-config-prettier stylelint-config-standard stylelint-order stylelint-scss
+$ yarn add -D @stylelint/postcss-css-in-js postcss-syntax stylelint stylelint-config-prettier stylelint-config-standard stylelint-order stylelint-scss
 
 ## TypeScript
 
-$ yarn add -D @stylelint/postcss-css-in-js @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-typescript postcss-syntax
+$ yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-import-resolver-typescript
 ```
 
 <br>
@@ -184,4 +184,4 @@ _괄호 안에 있는 익스텐션 ID로 검색하면 편리하게 찾을 수 �
 
 이곳에서 더 많은 설정과 패키지를 찾아보세요.
 
-[Common sources for boilerplate](https://github.com/biniruu/boilerplate-common-sources)
+[Starter Kit for Settings](https://github.com/biniruu/starter-kit-for-settings)
